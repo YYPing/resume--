@@ -13,7 +13,7 @@
 <body>
 <!--[if IE]><p class="kill-ie">微软都放弃了IE，为啥你却还不放弃？</p><![endif]-->
 <!-- <a class=pdf href=简历_前端开发_殷月鹏.pdf><i class="iconfont icon-pdf"></i> PDF简历</a> -->
-<a class=pdf href=简历_前端开发_殷月鹏.docx><i class="iconfont icon-pdf"></i> word简历</a>
+<a id="pdf" class=pdf href=简历_前端开发_殷月鹏.docx><i class="iconfont icon-pdf"></i> word简历</a>
 <p class=last-modified>最后更新时间：2018年01月</p>
 <div class=content>
     <div class=content-bd>
@@ -279,6 +279,25 @@
 </footer>
 
 </body>
+<script>
 
+    window.onload=function(){
+        var pdfLink = document.getElementById("pdf");
+        var flag 
+        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            flag = 1
+        } else {
+            flag = 0
+        }
+        var text=pdfLink.children;
+            if(flag){
+                pdfLink.href = "简历_前端开发_殷月鹏.pdf";
+                pdfLink.innerHTML = "PDF简历"
+            }else{
+                pdfLink.href = "简历_前端开发_殷月鹏.docx";
+                pdfLink.innerHTML = "word简历"
+            }
+    }
+</script>
 
 </html>
